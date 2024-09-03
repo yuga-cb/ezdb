@@ -1,17 +1,19 @@
 {
-  "name": "ezdb",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@yuga-cb/ezdb",
+  "version": "0.0.1-alpha",
+  "description": "A simple, flexible database abstraction layer that supports multiple storage backends",
+  "main": "ezdb.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@replit/database": "^3.0.1",
     "@vercel/kv": "^2.0.0",
     "dotenv": "^16.4.5",
     "pouchdb": "^9.0.0"
-  }
+  },
+  "keywords": ["database", "abstraction", "pouchdb", "replit", "vercel"]
 }

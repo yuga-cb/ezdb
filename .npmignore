@@ -1,0 +1,42 @@
+# Development files
+node_modules/
+.env
+.env.*
+*.log
+.DS_Store
+
+# Test files
+test/
+*.test.js
+*.spec.js
+
+# Source control
+.git/
+.gitignore
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and temporary files
+dist/
+tmp/
+*.tmp
+*.temp
+
+# Documentation and misc
+docs/
+README.md
+CHANGELOG.md
+LICENSE
+
+# Configuration files
+.eslintrc*
+.prettierrc*
+.babelrc*
+tsconfig.json
+
+# Stores
+stores/
