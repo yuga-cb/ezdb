@@ -22,10 +22,19 @@ class PouchStore {
    */
   async set(key, value) {
     try {
-      await this.db.put({
-        _id: key,
-        value: value,
+      const existingDoc = await this.db.get(key).catch((err) => {
+        if (err.name === "not_found") {
+          return { _id: key };
+        }
+        throw err;
       });
+
+      const updatedDoc = {
+        ...existingDoc,
+        value: value,
+      };
+
+      await this.db.put(updatedDoc);
     } catch (error) {
       console.error("Error setting value:", error);
       throw error;
@@ -43,6 +52,9 @@ class PouchStore {
       const doc = await this.db.get(key);
       return doc.value;
     } catch (error) {
+      if (error.name === "not_found") {
+        return null;
+      }
       console.error("Error getting value:", error);
       throw error;
     }

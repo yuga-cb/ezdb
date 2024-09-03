@@ -22,7 +22,7 @@ class VercelStore {
    */
   async set(key, value) {
     try {
-      await kv.set(key, value);
+      await kv.set(key, JSON.stringify(value));
     } catch (error) {
       console.error("Error setting value:", error);
       throw error;
@@ -37,7 +37,8 @@ class VercelStore {
    */
   async get(key) {
     try {
-      return await kv.get(key);
+      const result = await kv.get(key);
+      return result !== null ? JSON.parse(result) : null;
     } catch (error) {
       console.error("Error getting value:", error);
       throw error;

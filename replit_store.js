@@ -1,4 +1,4 @@
-import { Database } from "@replit/database";
+import Database from "@replit/database";
 
 /**
  * DB class for interacting with Replit Database
@@ -22,7 +22,10 @@ class ReplitStore {
    */
   async set(key, value) {
     try {
-      await this.db.set(key, value);
+      const result = await this.db.set(key, value);
+      if (!result.ok) {
+        throw new Error(result.error);
+      }
     } catch (error) {
       console.error("Error setting value:", error);
       throw error;
@@ -37,7 +40,11 @@ class ReplitStore {
    */
   async get(key) {
     try {
-      return await this.db.get(key);
+      const result = await this.db.get(key);
+      if (!result.ok) {
+        throw new Error(result.error);
+      }
+      return result.value;
     } catch (error) {
       console.error("Error getting value:", error);
       throw error;
