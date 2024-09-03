@@ -17,10 +17,15 @@ EZDB uses an environment variable `EZDB_TYPE` to determine which storage backend
 - `REPLIT`: Uses Replit's key-value store
 - `VERCEL`: Uses Vercel KV storage
 
-Set the `EZDB_TYPE` environment variable before running your application.
+Set the `EZDB_TYPE` environment variable before running your application:
+
+```bash
+EZDB_TYPE=REPLIT
+```
 
 Optional environment variables:
 
+**When `EZDB_TYPE=LOCAL`:**
 - `POUCHDB_NAME`: The name of the PouchDB database (default: `ezdb`)
 
 ## Usage
