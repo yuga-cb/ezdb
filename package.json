@@ -11,6 +11,7 @@
   "dependencies": {
     "@replit/database": "^3.0.1",
     "@vercel/kv": "^2.0.0",
+    "dotenv": "^16.4.5",
     "pouchdb": "^9.0.0"
   }
 }

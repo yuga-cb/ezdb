@@ -7,11 +7,10 @@ import PouchDB from "pouchdb";
  */
 class PouchStore {
   /**
-   * Creates an instance of DB
-   * @param {string} dbName - The name of the database
+   * Creates an instance of PouchStore
    */
-  constructor(dbName) {
-    this.db = new PouchDB(dbName);
+  constructor() {
+    this.db = new PouchDB(process.env.POUCHDB_NAME) || "ezdb";
   }
 
   /**
