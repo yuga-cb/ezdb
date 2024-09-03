@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@replit/database": "^3.0.1",
+    "@vercel/kv": "^2.0.0",
+    "pouchdb": "^9.0.0"
+  }
 }

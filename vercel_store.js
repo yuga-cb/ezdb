@@ -1,17 +1,16 @@
-import PouchDB from "pouchdb";
+import { kv } from "@vercel/kv";
 
 /**
- * DB class for interacting with PouchDB
+ * DB class for interacting with Vercel KV Database
  * @class
  * @implements {Ezdb}
  */
-class PouchStore {
+class VercelStore {
   /**
-   * Creates an instance of DB
-   * @param {string} dbName - The name of the database
+   * Creates an instance of VercelStore
    */
-  constructor(dbName) {
-    this.db = new PouchDB(dbName);
+  constructor() {
+    // No need to initialize anything as kv is globally available
   }
 
   /**
@@ -23,10 +22,7 @@ class PouchStore {
    */
   async set(key, value) {
     try {
-      await this.db.put({
-        _id: key,
-        value: value,
-      });
+      await kv.set(key, value);
     } catch (error) {
       console.error("Error setting value:", error);
       throw error;
@@ -41,8 +37,7 @@ class PouchStore {
    */
   async get(key) {
     try {
-      const doc = await this.db.get(key);
-      return doc.value;
+      return await kv.get(key);
     } catch (error) {
       console.error("Error getting value:", error);
       throw error;
@@ -50,4 +45,4 @@ class PouchStore {
   }
 }
 
-export default PouchStore;
+export default VercelStore;
