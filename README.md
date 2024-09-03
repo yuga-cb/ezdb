@@ -6,7 +6,7 @@ It is most useful for code that is intended to be deployed across multiple hosti
 ## Installation
 
 ```bash
-npm install ezdb
+npm install @yuga-cb/ezdb
 ```
 
 ## Configuration
