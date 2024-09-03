@@ -1,6 +1,6 @@
 {
   "name": "@yuga-cb/ezdb",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2-alpha",
   "description": "A simple, flexible database abstraction layer that supports multiple storage backends",
   "main": "ezdb.js",
   "type": "module",
