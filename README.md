@@ -1,6 +1,7 @@
 # EZDB
 
 EZDB is a simple, flexible database abstraction layer that supports multiple storage backends.
+It is most useful for code that is intended to be deployed across multiple hosting environments (e.g. Replit, Vercel, etc.) without modification.
 
 ## Installation
 
