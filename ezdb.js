@@ -34,4 +34,4 @@ function createDB() {
   }
 }
 
-export default createDB;
+export { Ezdb, createDB };
