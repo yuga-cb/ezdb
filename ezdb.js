@@ -12,6 +12,9 @@ dotenv.config();
  * @property {function(string): Promise<any>} get - Gets a value from the store
  */
 
+/** @type {Ezdb} */
+const EzdbType = {};
+
 /**
  * Creates and returns an Ezdb instance based on the EZDB_TYPE environment variable
  * @returns {Ezdb} An instance of PouchStore, ReplitStore, or VercelStore
@@ -34,4 +37,4 @@ function createDB() {
   }
 }
 
-export { Ezdb, createDB };
+export { EzdbType as Ezdb, createDB };
