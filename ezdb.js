@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
-import PouchStore from "./stores/pouch.js";
-import ReplitStore from "./stores/replit.js";
-import VercelStore from "./stores/vercel.js";
+import PouchStore from "./pouch_store.js";
+import ReplitStore from "./replit_store.js";
+import VercelStore from "./vercel_store.js";
 
 // Load environment variables from .env file
 dotenv.config();
