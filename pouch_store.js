@@ -10,7 +10,8 @@ class PouchStore {
    * Creates an instance of PouchStore
    */
   constructor() {
-    this.db = new PouchDB(process.env.POUCHDB_NAME) || "ezdb";
+    const dbName = process.env.POUCHDB_NAME || "ezdb";
+    this.db = new PouchDB(dbName);
   }
 
   /**
